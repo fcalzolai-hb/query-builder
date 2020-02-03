@@ -1,11 +1,10 @@
+package com.babylonhealth;
+
 import autogen.FieldLexer;
 import autogen.FieldParser;
 import org.antlr.v4.runtime.*;
 import org.junit.Test;
 
-/**
- * @author alex.collins
- */
 public class FieldTest {
 
     @Test

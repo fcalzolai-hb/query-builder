@@ -15,9 +15,6 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
 
-/**
- * @author alex.collins
- */
 public class GameFactory {
     public Game createGame(InputStream in) throws IOException {
         FieldLexer l = new FieldLexer(new ANTLRInputStream(in));

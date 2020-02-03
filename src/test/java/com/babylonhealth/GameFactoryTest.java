@@ -1,10 +1,9 @@
+package com.babylonhealth;
+
 import org.junit.Test;
 
 import com.babylonhealth.GameFactory;
 
-/**
- * @author alex.collins
- */
 public class GameFactoryTest {
 
     @Test

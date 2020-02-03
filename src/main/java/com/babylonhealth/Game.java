@@ -3,9 +3,6 @@ package com.babylonhealth;
 import java.util.Map;
 import java.util.Scanner;
 
-/**
- * @author alex.collins
- */
 public class Game {
     private String name;
     private Map<String,Integer> points;
