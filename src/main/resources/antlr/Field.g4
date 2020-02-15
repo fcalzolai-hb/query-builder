@@ -1,5 +1,9 @@
 grammar Field;
 
+//@header {
+//    package com.babylonhealth.antlr;
+//}
+
 field:
     name=Name NL
     (points NL)+

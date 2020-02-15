@@ -1,5 +1,10 @@
 grammar Expr;
 
+//@header {
+//package com.babylonhealth.antlr;
+//}
+
+
 prog:	(expr NEWLINE)* ;
 expr:	expr ('*'|'/') expr
     |	expr ('+'|'-') expr

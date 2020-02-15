@@ -2,8 +2,6 @@ package com.babylonhealth;
 
 import org.junit.Test;
 
-import com.babylonhealth.GameFactory;
-
 public class GameFactoryTest {
 
     @Test

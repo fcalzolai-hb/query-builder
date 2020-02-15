@@ -1,9 +1,14 @@
 package com.babylonhealth;
 
-import autogen.FieldLexer;
-import autogen.FieldParser;
-import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.BaseErrorListener;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.RecognitionException;
+import org.antlr.v4.runtime.Recognizer;
 import org.junit.Test;
+
+import com.babylonhealth.antlr.FieldLexer;
+import com.babylonhealth.antlr.FieldParser;
 
 public class FieldTest {
 

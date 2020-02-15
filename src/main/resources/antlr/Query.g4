@@ -1,5 +1,9 @@
 grammar Query;
 
+//@header {
+//    package com.babylonhealth.antlr;
+//}
+
 parse
  : expression EOF
  ;

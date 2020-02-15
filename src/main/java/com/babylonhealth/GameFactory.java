@@ -6,14 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-import autogen.FieldBaseListener;
-import autogen.FieldLexer;
-import autogen.FieldParser;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
+
+import com.babylonhealth.antlr.FieldBaseListener;
+import com.babylonhealth.antlr.FieldLexer;
+import com.babylonhealth.antlr.FieldParser;
 
 public class GameFactory {
     public Game createGame(InputStream in) throws IOException {
