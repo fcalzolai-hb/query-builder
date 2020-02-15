@@ -1,9 +1,5 @@
 grammar Query;
 
-//@header {
-//    package com.babylonhealth.antlr;
-//}
-
 parse
  : expression EOF
  ;
@@ -12,7 +8,8 @@ expression
  : LPAREN expression RPAREN                       #parenExpression
  | NOT expression                                 #notExpression
  | left=expression op=comparator right=expression #comparatorExpression
- | expression (binary expression)+     #binaryExpression
+// | expression (binary expression)+     #binaryExpression
+ | left=expression op=binary right=expression     #binaryExpression
  | bool                                           #boolExpression
  | IDENTIFIER                                     #identifierExpression
  | DECIMAL                                        #decimalExpression

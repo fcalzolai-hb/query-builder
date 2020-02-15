@@ -46,6 +46,7 @@
             <configuration>
               <sourceDirectory>${project.basedir}/src/main/resources/antlr</sourceDirectory>
               <outputDirectory>${project.basedir}/src/main/java/com/babylonhealth/antlr</outputDirectory>
+              <visitor>true</visitor>
               <arguments>
                 <argument>-package</argument>
                 <argument>com.babylonhealth.antlr</argument>

@@ -6,7 +6,7 @@ public class GameFactoryTest {
 
     @Test
     public void testBuild() throws Exception {
-        new GameFactory().createGame(getClass().getResourceAsStream("/example.field"));
-
+        Game game = new GameFactory().createGame(getClass().getResourceAsStream("/example.field"));
+//        game.play();
     }
 }
