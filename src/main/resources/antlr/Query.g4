@@ -8,7 +8,6 @@ expression
  : LPAREN expression RPAREN                       #parenExpression
  | NOT expression                                 #notExpression
  | left=expression op=comparator right=expression #comparatorExpression
-// | expression (binary expression)+     #binaryExpression
  | left=expression op=binary right=expression     #binaryExpression
  | bool                                           #boolExpression
  | IDENTIFIER                                     #identifierExpression
@@ -40,5 +39,5 @@ EQ         : '=' ;
 LPAREN     : '(' ;
 RPAREN     : ')' ;
 DECIMAL    : '-'? [0-9]+ ( '.' [0-9]+ )? ;
-IDENTIFIER : [a-zA-Z_] [a-zA-Z_0-9]* ;
+IDENTIFIER : [a-zA-Z0-9_\-:+]+ ;
 WS         : [ \r\t\u000C\n]+ -> skip;

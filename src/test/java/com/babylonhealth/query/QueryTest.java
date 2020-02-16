@@ -24,6 +24,7 @@ public class QueryTest {
         new Pair<>("TRUE", true),
         new Pair<>("FALSE", true),
         new Pair<>("TRUE OR FALSE", true),
+        new Pair<>("TRUE OR FALSE AND TRUE", true),
         new Pair<>("TRUE AND FALSE", true)
     };
 
@@ -64,6 +65,7 @@ public class QueryTest {
     }};
 
     Pair<String, Boolean>[] expressions = new Pair[] {
+        new Pair<>("NOT FALSE AND TRUE", true),
         new Pair<>("1 > 2", false),
         new Pair<>("1 >= 1.0", true),
         new Pair<>("FALSE = FALSE", true),
@@ -80,8 +82,8 @@ public class QueryTest {
       QueryLexer lexer = new QueryLexer(new ANTLRInputStream(pair.a));
       QueryParser parser = new QueryParser(new CommonTokenStream(lexer));
       Object result = new EvalVisitor(variables).visit(parser.parse());
-      System.out.printf("%-70s -> %s\n", pair.a, result);
       Assert.assertEquals(pair.b, result);
+//      System.out.printf("%-70s -> %s\n", pair.a, result);
     }
   }
 }
