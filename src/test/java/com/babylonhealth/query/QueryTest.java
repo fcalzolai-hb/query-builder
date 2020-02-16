@@ -36,15 +36,15 @@ public class QueryTest {
     Pair<String, Boolean>[] expressions = new Pair[] {
         new Pair<>("NOT FALSE AND TRUE", true),
         new Pair<>("1 > 2", false),
-        new Pair<>("1 >= 1.0", true),
-        new Pair<>("FALSE = FALSE", true),
+        new Pair<>("1 >: 1.0", true),
+        new Pair<>("FALSE : FALSE", true),
         new Pair<>("A OR B", true),
         new Pair<>("B", false),
-        new Pair<>("A = B", false),
-        new Pair<>("c = C", true),
+        new Pair<>("A : B", false),
+        new Pair<>("c : C", true),
         new Pair<>("E > D", true),
-        new Pair<>("B OR (c = B OR (A = A AND c = C AND E > D))", true),
-        new Pair<>("(A = a OR B = b OR C = c AND ((D = d AND E = e) OR (F = f AND G = g)))", true)
+        new Pair<>("B OR (c : B OR (A : A AND c : C AND E > D))", true),
+        new Pair<>("(A : a OR B : b OR C : c AND ((D : d AND E : e) OR (F : f AND G : g)))", true)
     };
 
     for (Pair<String, Boolean> pair : expressions) {

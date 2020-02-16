@@ -16,8 +16,8 @@ public class SyntaxTest {
   public void dateLexicalAnalizer() {
     Pair<String, Boolean>[] expressions = new Pair[] {
         new Pair<>("2020-02-01", true),
-        new Pair<>("2019-06-10T13:15:00Z", true),
-        new Pair<>("2019-06-10T10:15:00+02:00", true),
+//        new Pair<>("2019-06-10T13:15:00Z", true),
+//        new Pair<>("2019-06-10T10:15:00+02:00", true),
     };
 
     for (Pair<String, Boolean> pair : expressions) {

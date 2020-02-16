@@ -1,31 +1,20 @@
 package com.babylonhealth.query;
 
-import org.antlr.v4.runtime.BaseErrorListener;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.RecognitionException;
-import org.antlr.v4.runtime.Recognizer;
+import javax.persistence.criteria.CriteriaBuilder;
+import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
 import org.junit.Test;
-
-import com.babylonhealth.antlr.FieldLexer;
-import com.babylonhealth.antlr.QueryLexer;
-import com.babylonhealth.antlr.QueryParser;
+import org.springframework.data.jpa.domain.Specification;
 
 public class TestFirstQueryListener {
 
   @Test
   public void validateResult() {
-    QueryLexer lexer = new QueryLexer(CharStreams.fromString("1 > 2"));
-    QueryParser parser = new QueryParser(new CommonTokenStream(lexer));
-    parser.addErrorListener(new BaseErrorListener() {
-      @Override
-      public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
-        throw new IllegalStateException("failed to parse at line " + line + " due to " + msg, e);
-      }
-    });
+    //a user searches for partners with query
+    //    lexer = new QueryLexer(CharStreams.fromString("display_name:Bupa OR display_name:NHS"));
 
-    parser.addParseListener(new FirstQueryListener<>());
-    QueryParser.ParseContext parse = parser.parse();
-    System.out.println(parse);
+    Specification<String> s = new QuerySpecification<>("display_name:Bupa");
+    //TODO create an in memory DB to test the QuerySpecification
+//    s.toPredicate(new CriteriaBuilderImpl(), )
+    System.out.println(s);
   }
 }
