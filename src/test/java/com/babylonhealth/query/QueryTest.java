@@ -12,38 +12,7 @@ import org.junit.Test;
 import com.babylonhealth.antlr.QueryLexer;
 import com.babylonhealth.antlr.QueryParser;
 
-import static org.junit.Assert.fail;
-
 public class QueryTest {
-
-  @Test
-  public void validateParser() {
-    Pair<String, Boolean>[] expressions = new Pair[] {
-        new Pair<>("1 > 2", true),
-        new Pair<>("1 >>= 1.0", false),
-        new Pair<>("TRUE", true),
-        new Pair<>("FALSE", true),
-        new Pair<>("TRUE OR FALSE", true),
-        new Pair<>("TRUE OR FALSE AND TRUE", true),
-        new Pair<>("TRUE AND FALSE", true)
-    };
-
-    for (Pair<String, Boolean> pair : expressions) {
-      QueryLexer lexer = new QueryLexer(new ANTLRInputStream(pair.a));
-      QueryParser parser = new QueryParser(new CommonTokenStream(lexer));
-      parser.addErrorListener(new QueryErrorListener());
-      try {
-        parser.parse();
-        if (!pair.b) {
-          fail("Unexpected success");
-        }
-      } catch (Exception e) {
-        if (pair.b) {
-          fail("Unexpected failure");
-        }
-      }
-    }
-  }
 
   @Test
   public void validateResult() {
